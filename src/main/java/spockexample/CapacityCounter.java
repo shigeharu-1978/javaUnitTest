@@ -1,8 +1,11 @@
 package spockexample;
 
+import lombok.Getter;
+
 /**
  * キャパシティを数値で管理するクラス。
  */
+@Getter
 public class CapacityCounter {
 	private int count = 0;
 
@@ -27,12 +30,4 @@ public class CapacityCounter {
 		this.count -= count;
 	}
 
-	/**
-	 * 現在のカウントを取得する
-	 * 
-	 * @return 現在のカウント
-	 */
-	public int getCount() {
-		return this.count;
-	}
 }

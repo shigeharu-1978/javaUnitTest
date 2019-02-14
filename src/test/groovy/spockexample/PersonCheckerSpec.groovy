@@ -3,7 +3,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 class PersonCheckerSpec extends Specification {
 	@Unroll
-	def "#age歳で性別が#sexの場合に大人かどうかの判定で#resultが返る"() {
+	def "#age歳で性別が#sexの場合に大人かどうかの判定で#resultが返る()"() {
 		setup:
 		def sut = new PersonChecker()
 		expect:
