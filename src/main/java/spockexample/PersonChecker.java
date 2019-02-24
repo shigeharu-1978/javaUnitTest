@@ -1,5 +1,10 @@
 package spockexample;
 
+/**
+ * Personに対して男性かどうかを判定するisMeleメソッドや、 大人かどうかを判定するisAdultメソッドを持つクラス
+ * @author user
+ *
+ */
 public class PersonChecker {
 	/**
 	 * Personが大人(20歳以上)かどうかを返す

@@ -10,6 +10,12 @@ import org.junit.runner.RunWith;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
+/**
+ * PersonCheckerのチェッククラステスト
+ * 
+ * @author user
+ *
+ */
 @RunWith(Enclosed.class)
 public class PersonCheckerTest {
 
@@ -54,7 +60,8 @@ public class PersonCheckerTest {
 			// Fixtureの値を使ってPersonオブジェクトを初期化
 			Person person = new Person(fixture.sex, fixture.age);
 
-			// テストメソッド実行＆結果判定
+			/* 
+			 * テストメソッド実行＆結果判定 */
 			assertThat(sut.isAdult(person), is(fixture.result));
 			System.out.println(fixture.age + "歳で性別が" + fixture.sex + "の場合に大人かどうかの判定で" + fixture.result + "が返る()");
 		}
@@ -99,7 +106,9 @@ public class PersonCheckerTest {
 			// Fixtureの値を使ってPersonオブジェクトを初期化
 			Person person = new Person(fixture.sex, fixture.age);
 
-			// テストメソッド実行＆結果判定
+			/*
+			 *  テストメソッド実行＆結果判定
+			 */
 			assertThat(sut.isMale(person), is(fixture.result));
 			System.out.println(fixture.age + "歳で性別が" + fixture.sex + "の場合に、男性化どうかの判定で" + fixture.result + "が返る()");
 		}
