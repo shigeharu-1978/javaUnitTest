@@ -100,7 +100,8 @@ public class PersonCheckerTest {
         @DataPoints
         public static Fixture[] fixtures = {new Fixture(19, "m", true), new Fixture(20, "m", true),
                 new Fixture(19, "f", false), new Fixture(20, "f", false),};
-
+        @DataPoint
+        public static int errTest = 1;
         @Theory
         public void testIsMale(Fixture fixture) {
             // Fixtureの値を使ってPersonオブジェクトを初期化
@@ -112,6 +113,17 @@ public class PersonCheckerTest {
             assertThat(sut.isMale(person), is(fixture.result));
             System.out.println(fixture.age + "歳で性別が" + fixture.sex + "の場合に、男性化どうかの判定で"
                     + fixture.result + "が返る()");
+        }
+        @Theory
+        public void testIsMale(int errTest) {
+            if (errTest == 1) {
+                try {
+                    sut.isMale(null);
+                } catch (IllegalArgumentException e) {
+                    assertEquals("nullは許可されていません", e.getMessage());
+                    System.out.println("メッセージ\"nullは許可されていません\"を出力成功");
+                }
+            }
         }
     }
 }
