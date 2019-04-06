@@ -8,6 +8,9 @@ public class PersonChecker {
 	 * @return 大人であればtrue、そうでなければfalse
 	 */
 	public boolean isAdult(Person person) {
+	    if (person == null) {
+            throw new IllegalArgumentException("nullは許可されていません");
+        }
 		return person.getAge() >= 20;
 	}
 
