@@ -38,8 +38,12 @@ public class PersonCheckerTest {
          * テストに使用するパラメータを定義
          */
         @DataPoints
-        public static Fixture[] fixtures = {new Fixture(0, "m", false), new Fixture(19, "m", false),
-                new Fixture(20, "m", true), new Fixture(0, "f", false), new Fixture(19, "f", false),
+        public static Fixture[] fixtures = {
+                new Fixture(0, "m", false), 
+                new Fixture(19, "m", false),
+                new Fixture(20, "m", true), 
+                new Fixture(0, "f", false), 
+                new Fixture(19, "f", false),
                 new Fixture(20, "f", true),};
         @DataPoint
         public static int errTest = 1;
@@ -58,7 +62,7 @@ public class PersonCheckerTest {
         }
 
         @Theory
-        public void testIsAdult(int errTest) {
+        public void errTestIsAdult(int errTest) {
             if (errTest == 1) {
                 try {
                     sut.isAdult(null);
@@ -98,8 +102,11 @@ public class PersonCheckerTest {
          * テストに使用するパラメータを定義
          */
         @DataPoints
-        public static Fixture[] fixtures = {new Fixture(19, "m", true), new Fixture(20, "m", true),
-                new Fixture(19, "f", false), new Fixture(20, "f", false),};
+        public static Fixture[] fixtures = {
+                new Fixture(19, "m", true), 
+                new Fixture(20, "m", true),
+                new Fixture(19, "f", false), 
+                new Fixture(20, "f", false),};
         @DataPoint
         public static int errTest = 1;
         @Theory
@@ -115,7 +122,7 @@ public class PersonCheckerTest {
                     + fixture.result + "が返る()");
         }
         @Theory
-        public void testIsMale(int errTest) {
+        public void errTestIsMale(int errTest) {
             if (errTest == 1) {
                 try {
                     sut.isMale(null);
